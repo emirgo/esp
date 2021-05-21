@@ -63,6 +63,12 @@ uintptr_t GetModuleBaseAddress(DWORD procId, const wchar_t* modName)
     return modBaseAddr;
 }
 
+uintptr_t moduleBase = GetModuleBaseAddress(GetProcId(L"csgo.exe"), L"client_panaroma.dll");
+HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, GetProcId(L"csgo.exe"));
+HDC hdc = GetDC(FindWindowA(NULL, "Counter-Strike: Global Offensive"));
+
+
+
 int main()
 {
 }

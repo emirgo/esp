@@ -32,7 +32,7 @@ DWORD GetProcId(const wchar_t* procName)
                     procId = procEntry.th32ProcessID;
                     break;
                 }
-            } while (Process32Next(hSnap, &procEntry);
+            } while (Process32Next(hSnap, &procEntry));
         }
     }
     CloseHandle(hSnap);

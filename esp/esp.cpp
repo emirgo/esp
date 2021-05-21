@@ -67,7 +67,13 @@ uintptr_t moduleBase = GetModuleBaseAddress(GetProcId(L"csgo.exe"), L"client_pan
 HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, GetProcId(L"csgo.exe"));
 HDC hdc = GetDC(FindWindowA(NULL, "Counter-Strike: Global Offensive"));
 
+template<typename T> T RPM(SIZE_T address) {
+    T buffer;
 
+    ReadProcessMemory(hProcess, (LPCVOID)address, &buffer, sizeof(T), NULL);
+
+    return buffer;
+}
 
 int main()
 {

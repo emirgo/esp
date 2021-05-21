@@ -109,6 +109,20 @@ Vector3 WorldToScreen(const Vector3 pos, view_matrix_t matrix)
     return { x, y, w };
 }
 
+void DrawFilledRect(int x, int y, int w, int h)
+{
+    RECT rect = { x, y, x + w, y + h };
+    FillRect(hdc, &rect, EnemyBrush);
+}
+
+void DrawBorderBox(int x, int y, int w, int h, int thickness)
+{
+    DrawFilledRect(x, y, w, thickness); // top
+    DrawFilledRect(x, y, thickness, h); // left
+    DrawFilledRect((x + w), y, thickness, h); // right
+    DrawFilledRect(x, y + h, w + thickness, thickness); // bottom
+}
+
 int main()
 {
 }

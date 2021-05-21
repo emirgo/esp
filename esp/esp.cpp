@@ -125,5 +125,9 @@ void DrawBorderBox(int x, int y, int w, int h, int thickness)
 
 int main()
 {
+    while (true)
+    {
+        view_matrix_t vm = RPM<view_matrix_t>(moduleBase + dwViewMatrix);
+    }
 }
 

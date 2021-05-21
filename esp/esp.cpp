@@ -35,6 +35,8 @@ DWORD GetProcId(const wchar_t* procName)
             } while (Process32Next(hSnap, &procEntry);
         }
     }
+    CloseHandle(hSnap);
+    return procId;
 }
 
 int main()

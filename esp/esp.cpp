@@ -39,6 +39,13 @@ DWORD GetProcId(const wchar_t* procName)
     return procId;
 }
 
+uintptr_t GetModuleBaseAddress(DWORD procId, const wchar_t* modName)
+{
+    uintptr_t modBaseAddr = 0;
+    //...
+    return modBaseAddr;
+}
+
 int main()
 {
     std::cout << "Hello World!\n";

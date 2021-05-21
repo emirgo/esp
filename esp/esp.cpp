@@ -1,7 +1,7 @@
 // esp.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "Offsets.h"
+#include "Offsets.hpp"
 #include <iostream>
 #include <Windows.h>
 #include <TlHelp32.h>

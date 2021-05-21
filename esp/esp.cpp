@@ -75,6 +75,19 @@ template<typename T> T RPM(SIZE_T address) {
     return buffer;
 }
 
+struct view_matrix_t {
+    float* operator[ ](int index) {
+        return matrix[index];
+    };
+
+    float matrix[4][4];
+};
+
+struct Vector3
+{
+    float x, y, z;
+};
+
 int main()
 {
 }

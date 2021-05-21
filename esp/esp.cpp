@@ -1,9 +1,22 @@
 // esp.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include "Offsets.h"
 #include <iostream>
 #include <Windows.h>
 #include <TlHelp32.h>
+
+#define EnemyPen 0x000000FF
+HBRUSH EnemyBrush = CreateSolidBrush(0x000000FF);
+
+// get screen dimensions
+int screenX = GetSystemMetrics(SM_CXSCREEN);
+int screenY = GetSystemMetrics(SM_CYSCREEN);
+
+DWORD GetProcId(const wchar_t* procName)
+{
+    
+}
 
 int main()
 {
